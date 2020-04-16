@@ -11,12 +11,10 @@ SW1(config)#do wr
 Sur SW1 et SW3 on attribu le VLAN 10 aux interfaces correspondantes:
 
 SW1(config)#int g1/0
-SW1(config-if)#no shutdown
 SW1(config-if)#switchport mode access
 SW1(config-if)#switchport access vlan 10
 
 SW3(config)#int g2/0
-SW3(config-if)#no shutdown
 SW3(config-if)#switchport mode access
 SW3(config-if)#switchport access vlan 10
 SW3(config-if)#exit
@@ -24,19 +22,16 @@ SW3(config-if)#exit
 Sur SW1, SW2 et SW3 on attribu le vlan 99 aux interfaces correspondantes:
 
 SW1(config)#interface range G0/2,G0/3
-SW1(config-if-range)#no shutdown
 SW1(config-if-range)#switchport trunk encapsulation dot1q
 SW1(config-if-range)#switchport mode trunk
 SW1(config-if-range)#switchport trunk native vlan 99
 
 SW2(config)#interface range G0/1,G0/3
-SW2(config-if-range)#no shutdown
 SW2(config-if-range)#switchport trunk encapsulation dot1q
 SW2(config-if-range)#switchport mode trunk
 SW2(config-if-range)#switchport trunk native vlan 99
 
 SW3(config)#interface range G0/1,G0/2
-SW3(config-if-range)#no shutdown
 SW3(config-if-range)#switchport trunk encapsulation dot1q
 SW3(config-if-range)#switchport mode trunk
 SW3(config-if-range)#switchport trunk native vlan 99
